@@ -6,9 +6,9 @@ import Word from './components/Word';
 import Popup from './components/Popup';
 import Notification from './components/Notification';
 import { showNotification as show, checkWin } from './helpers/helpers';
-import { Container, Header } from 'semantic-ui-react'
-import './App.css';
 
+import './App.css';
+import TextField from '@material-ui/core/TextField';
 const words = ['algorithm','program','python','api','boolean','char','machinelearning','javascript','oops','class','hackerrank','hackerearth',
 'angular','react','yarn','nodejs','array','exception','loop','visualstudiocode','vscode','variable','google','intern','projects','certificates','vanillajavascript'
 ,'engineer','markuplanguage','package','frontend','backend','fullstack','serverside','developer','postgraduate','freecodecamp','geeksforgeeks','userinterface','userexperience',
@@ -63,19 +63,18 @@ function App() {
 
   return (
     <>
-    <Container fluid>
+    
      
       <Heading />
       <div className="game-container">
         <Figure wrongLetters={wrongLetters} />
-        <WrongLetters wrongLetters={wrongLetters} />  
+        <WrongLetters wrongLetters={wrongLetters} /> 
         <Word selectedWord={selectedWord} correctLetters={correctLetters} />
       </div>
-     
+      
       <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain} />
       <Notification showNotification={showNotification} />
-    </Container>
-      
+   
     </>
   );
 }
